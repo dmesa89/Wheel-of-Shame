@@ -1,0 +1,34 @@
+<div class="body-container">
+
+{{#each vehicle}}
+<h3>Vehicle:</h3>
+    {{make}} | {{model}} | {{color}} | {{licensePlate}}
+ {{/each}}
+
+{{#each incidents}}
+
+<table style="50%" border="1">
+    <h4 id="add-option-incident">Incident</h4>
+    <tr>
+        <th>Offense</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Date</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+
+        <td>{{offenses}} </td>
+        <td>{{city}}</td>
+        <td>{{state}}</td>
+        <td>{{date}}</td>
+        <td>{{description}}</td>
+
+    </tr>
+</table>
+    <td><a href="/searchByLicense/incident/{{licensePlate}}/{{incidentID}}"><button>Update</button></a></td>
+    <td><button onclick="deleteIncident({{incidentID}})">Delete</button></td>
+    <br /><br />
+{{/each}}
+
+</div>

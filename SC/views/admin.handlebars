@@ -1,0 +1,83 @@
+<div class="body-container">
+    <h2>Vehicles</h2>
+
+    <div>
+        <table border="1">
+            <thead>
+            <th>License Plate</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Color</th>
+
+            </thead>
+            {{#each vehicles}}
+            <tr>
+                <td>{{licensePlate}}</td>
+                <td>{{make}}</td>
+                <td>{{model}}</td>
+                <td>{{color}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+
+    <h2>Incidents</h2>
+    <div>
+        <table border="1">
+            <thead>
+            <th>City</th>
+            <th>State</th>
+            <th>Date</th>
+            <th>License Plate</th>
+
+            </thead>
+            {{#each incidents}}
+            <tr>
+                <td>{{city}}</td>
+                <td>{{state}}</td>
+                <td>{{date}}</td>
+                <td>{{licensePlate}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+
+    <h2>Incidents-Offenses</h2>
+    <div>
+        <table border="1">
+            <thead>
+            <th>Incident ID</th>
+            <th>Offense ID</th>
+
+
+            </thead>
+            {{#each incidentsOffenses}}
+            <tr>
+                <td>{{incidentID}}</td>
+                <td>{{offenseID}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+    <h2>Evidence</h2>
+    <div>
+        <table border="1">
+            <thead>
+            <th>Incident ID</th>
+            <th>Description</th>
+
+
+            </thead>
+            {{#each evidence}}
+            <tr>
+                <td>{{incidentID}}</td>
+                <td>{{description}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+</div>

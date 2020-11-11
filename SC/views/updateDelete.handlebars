@@ -1,0 +1,51 @@
+<div class="topnav">
+		<a href="/">Home</a>
+		<a href="incident">Report an Incident</a>
+		<a href="searchByLicense">Search by License Plate</a>
+		<a href="searchByLocation">Search by Location</a>
+		 <a href="admin">Admin</a>
+		<a href="about">What is Wheel of Shame?</a>
+	</div>
+    
+   {{#each vehicle}}
+  <h3>Vehicle:</h3>
+  {{make}} | {{model}} | {{color}} | {{licensePlate}}  <td> <br/>  {{/each}}
+    <br/><br/>
+ <table style="50%" border="1">
+    <tr>
+      <th>Offense</th>
+  </tr>
+        {{#each offense}}
+        <tr>
+        <td>{{name}} <button onclick="deleteOffense({{offenseID}})">Delete</button></td>
+        </tr>
+         {{/each}}
+   </table>
+    <br/><br/>
+     {{#each incident}}
+    <form id="add-offense" action="/searchByLicense" method="post">
+    <p><label for="offense" name="offense">Add an Offense: </label>
+                    <select name="offense" id="incident_type">
+					<option value="">Select an Option</option>
+					<option value="1">DUI</option>
+                    <option value="2">Speeding</option>
+                    <option value="3">Running Red Light/Stop Sign</option>
+                    <option value="4">Reckless Driving</option>
+					 <option value="5">Road Rage</option>
+					 <option value="6">Littering</option>
+                    <option value="7">Illegal Parking</option>
+                    </select></p>
+    </form>
+    <button onclick="addOffense({{incidentID}})">Add</button>
+
+
+<h3>Update:</h3>
+<form id="update-incident" action="/searchByLicense" method="post">
+	City: <input type="text" name="city" value="{{city}}"><br>
+    State: <input type="text" name="state" value="{{state}}"><br>
+    date: <input type="date" name="date" value="{{changeDate date}}"><br>
+    description: <input type="text" name="descriptionn" value="{{description}}"><br>
+    
+</form>
+<button onclick="updateIncident({{incidentID}})">Update</button>
+{{/each}}
